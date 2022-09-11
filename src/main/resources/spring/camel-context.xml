@@ -12,6 +12,7 @@
 		</rest>
 		<route>
 			<from uri="direct:hello" />
+			<log message="you called me"/>
 			<setBody>
 				<constant>Hello World</constant>
 			</setBody>
