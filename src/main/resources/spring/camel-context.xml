@@ -6,15 +6,15 @@
 		xmlns="http://camel.apache.org/schema/spring">
 
 		<rest path="/say">
-			<get uri="/hello">
+			<get uri="/hello" produces="application/json">
 				<to uri="direct:hello" />
 			</get>
 		</rest>
 		<route>
 			<from uri="direct:hello" />
-			<transform>
+			<setBody>
 				<constant>Hello World</constant>
-			</transform>
+			</setBody>
 		</route>
 
 	</camelContext>
